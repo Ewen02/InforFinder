@@ -1,9 +1,27 @@
+import { BasicButton } from "../../components/indexComponents";
+
 import "./Home.scss"
 
 const Home = () => {
+
+    const goToMovies = () => {
+        window.location.href = "/movies";
+    }
+
+    const goToCountry = () => {
+        window.location.href = "/country";
+    }
+
     return (
         <>
-            Home
+            <BasicButton 
+                text="Movies"
+                onClick={goToMovies}
+            />
+            <BasicButton 
+                text="Country"
+                onClick={goToCountry}
+            />
         </>
     )
 }
