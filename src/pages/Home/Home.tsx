@@ -18,7 +18,7 @@ const Home = () => {
                 text="Movies"
                 onClick={goToMovies}
             />
-            <BasicButton 
+            <BasicButton    
                 text="Country"
                 onClick={goToCountry}
             />

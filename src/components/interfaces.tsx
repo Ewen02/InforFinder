@@ -9,6 +9,19 @@ interface IButtonProps {
     className?: string;
 }
 
+//-----------
+// IMovieCard
+//-----------
+
+interface IMovieCard {
+    name: string;
+    urlImage: string;
+    score: number;
+    onClick?: () => void;
+    className?: string;
+}
+
 export type {
     IButtonProps,
+    IMovieCard
 }
