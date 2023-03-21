@@ -1,28 +1,25 @@
 import { useEffect, useState } from "react";
-import { BasicButton } from "../../components/indexComponents";
+import { BasicButton, MovieCard } from "../../components/indexComponents";
 import { InfoFinder } from "../../components/tools/InfoFinder"
 
 import "./InfoMovies.scss"
 
 const InforMovies = () => {
     const [query, setQuery] = useState("");
-    const [movies, setMovies] = useState<InfoFinder.Tvmaze.MoviesResponse | InfoFinder.ErrorResponse>();
-
-    useEffect(() => {
-        console.log(movies);
-    }, [movies]);
+    const [movies, setMovies] = useState<InfoFinder.Tvmaze.Movie[]>([]);
 
     const searchMovies = async () => {
-        await InfoFinder.Tvmaze.GetMovies(query).then(r => {
-            setMovies(r);
-        })
-    }
+        const response = await InfoFinder.Tvmaze.GetMovies(query);
+        setMovies(response);
+    };
 
-    /// TODO : faire des component Form  https://www.youtube.com/watch?v=oYuybfkwGx4&ab_channel=Grafikart.fr
+    useEffect(() => {
+    }, [movies]);
+
     return (
         <>
             <section className="header">
-                <h1>Movies Finder</h1>
+                <h1>Recherche de films</h1>
             </section>
             <section className="form-search">
                 <input type="text" placeholder="Search movies..." onChange={(e) => setQuery(e.target.value)}/>
@@ -34,14 +31,22 @@ const InforMovies = () => {
             <section className="show-catalog">
                 <div className="movies">
                     {
-                        // catalog.map((movie) => {
-                        //     return (CardMovie(movie.show.image.original, movie.score))
-                        // })
+                        movies.length ? movies.map((movie) => {
+                            return (
+                                <MovieCard 
+                                    key={movie.show.id} 
+                                    name={movie.show.name} 
+                                    score={movie.score} 
+                                    urlImage={movie.show.image && movie.show.image.medium ? movie.show.image.medium : ""}
+                                />
+                            );
+                        }) : null
                     }
                 </div>
             </section>
         </>
     );
-}
+};
+
 
 export default InforMovies;

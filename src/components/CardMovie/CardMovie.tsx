@@ -1,16 +1,23 @@
 import React from "react";
-import { IButtonProps, IMovieCard } from "../interfaces";
 
 import './CardMovie.scss'
 
-const MovieCard: React.FC<IMovieCard> = (props) => {
+interface MovieCard {
+    name: string;
+    urlImage: string;
+    score: number;
+    onClick?: () => void;
+    className?: string;
+}
+
+const MovieCard: React.FC<MovieCard> = (props) => {
     return (
         <div className="container">
-        <div className="carte">
-            <img src={props.urlImage}/>
-            <p>{props.score}</p>
+            <div className="carte">
+                <img src={props.urlImage}/>
+                <p>{props.score}</p>
+            </div>
         </div>
-    </div>
     );
 }
 
