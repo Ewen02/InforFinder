@@ -2,7 +2,7 @@ import React from "react";
 
 import './CardMovie.scss'
 
-interface MovieCard {
+interface MovieCardProps {
     name: string;
     urlImage: string;
     score: number;
@@ -10,12 +10,12 @@ interface MovieCard {
     className?: string;
 }
 
-const MovieCard: React.FC<MovieCard> = (props) => {
+const MovieCard: React.FC<MovieCardProps> = (props) => {
     return (
         <div className="container">
             <div className="carte">
                 <img src={props.urlImage}/>
-                <p>{props.score}</p>
+                <p style={{color:'white'}}>{props.name}</p>
             </div>
         </div>
     );
