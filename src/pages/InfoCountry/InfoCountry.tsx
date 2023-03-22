@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BasicButton } from "../../components/indexComponents";
+import { BasicButton, Header } from "../../components/indexComponents";
 import { InfoFinder } from "../../components/tools/InfoFinder"
 
 
@@ -21,9 +21,7 @@ const InforCountry = () => {
 
     return (
         <>
-            <section className="header">
-                <h1>Recherche de Pays</h1>
-            </section>
+            <Header title="Recherche de Pays"></Header>
             <section className="form-search">
                 <input type="text" placeholder="Search Countrie..." onChange={(e) => setQuery(e.target.value)}/>
                 <BasicButton

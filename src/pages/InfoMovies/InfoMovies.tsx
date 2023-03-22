@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BasicButton, MovieCard } from "../../components/indexComponents";
+import { BasicButton, Header, MovieCard } from "../../components/indexComponents";
 import { InfoFinder } from "../../components/tools/InfoFinder"
 
 import "./InfoMovies.scss"
@@ -18,9 +18,7 @@ const InforMovies = () => {
 
     return (
         <>
-            <section className="header">
-                <h1>Recherche de films</h1>
-            </section>
+            <Header title={"Recherche de films"} ></Header>
             <section className="form-search">
                 <input type="text" placeholder="Search movies..." onChange={(e) => setQuery(e.target.value)}/>
                 <BasicButton
