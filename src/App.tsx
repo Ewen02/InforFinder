@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.scss';
@@ -8,6 +8,9 @@ import InforCountry from './pages/InfoCountry/InfoCountry';
 import InforMovies from './pages/InfoMovies/InfoMovies';
 
 function App() {
+  useEffect(() => {
+    window.document.title = "InfoFinder"
+  })
   return (
     <>
       <BrowserRouter>
