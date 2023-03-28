@@ -1,9 +1,10 @@
 // Button
 export { default as BasicButton } from './Button/BasicButton';
 
-// MovieCard
+// Card
 
 export { default as MovieCard } from './CardMovie/CardMovie'
+export { default as CountrieCard } from './CardCountrie/CardCountrie'
 
 // Header
 
