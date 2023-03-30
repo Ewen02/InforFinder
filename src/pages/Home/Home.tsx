@@ -12,6 +12,10 @@ const Home = () => {
         window.location.href = "/country";
     }
 
+    const goToCountryRest = () => {
+        window.location.href = "/countryRest";
+    }
+
     return (
         <>
             <BasicButton 
@@ -21,6 +25,10 @@ const Home = () => {
             <BasicButton    
                 text="Country"
                 onClick={goToCountry}
+            />
+            <BasicButton
+                text="Country - Rest API"
+                onClick={goToCountryRest}
             />
         </>
     )

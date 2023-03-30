@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import { BasicButton, CountrieCard, Header } from "../../components/indexComponents";
 import { InfoFinder } from "../../components/tools/InfoFinder"
 
+import './../InfoCountry/InfoCountry.scss'
 
-import "./InfoCountry.scss";
-
-const InforCountry = () => {
-    const [query, setQuery] = useState("");
-    const [countrie, setCountrie] = useState<InfoFinder.API_Ninja.CountryData>();
+const InforCountryRest = () => {
+const [query, setQuery] = useState("");
+    const [countrie, setCountrie] = useState<InfoFinder.Rest_Countrie.CountryData>();
 
     const searchCountries = async () => {
-        const response = await InfoFinder.API_Ninja.GetCountrie(query);
+        const response = await InfoFinder.Rest_Countrie.GetCountrie(query);
         setCountrie(response);
     };
 
     useEffect(() => {
+        console.log(countrie);
     }, [countrie]);
 
 
@@ -33,13 +33,13 @@ const InforCountry = () => {
 
                     {
                         countrie! ?
-                            <CountrieCard 
-                            urlImage=""
-                            name={countrie.name} 
-                            capital={countrie.capital} 
-                            continents={countrie.region} 
-                            population={Number(countrie.population)}
-                            />
+                        <CountrieCard 
+                            name={countrie.name.common} 
+                            capital={countrie.capital[0]} 
+                            continents={countrie.continents[0]} 
+                            population={countrie.population} 
+                            urlImage={countrie.flags.svg}
+                        />
                         : null
                     }
                 </div>
@@ -48,4 +48,4 @@ const InforCountry = () => {
     )
 }
 
-export default InforCountry;
+export default InforCountryRest
