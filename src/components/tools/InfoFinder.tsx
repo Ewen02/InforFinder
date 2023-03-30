@@ -40,7 +40,7 @@ export namespace InfoFinder {
         export async function GetMovies(query: string): Promise<Movie[]> {
           let result: Movie[] = [];
         
-          await fetch('https://api.tvmaze.com/search/shows?q=' + query)
+          await fetch(`https://restcountries.com/v3.1/name/${query}`)
             .then((response) => response.json())
             .then((data) => {
               result = data;
@@ -102,7 +102,7 @@ export namespace InfoFinder {
       export async function GetCountrie(query: string): Promise<CountryData> {
         let result!: CountryData;
 
-        await axios.get('https://api.api-ninjas.com/v1/country?name=' + query, {
+        await axios.get(`https://restcountries.com/v3.1/name/${query}`, {
           headers: { 'X-Api-Key': 'OftTmfBPCMwbbBW0PYOmYw==SAc0qa0qyi5qFjT9'},
         }).then((r) => {
           result = r.data[0]
@@ -156,7 +156,7 @@ export namespace InfoFinder {
       export async function GetCountrie(query: string): Promise<CountryData> {
         let result!: CountryData;
 
-        await fetch('https://restcountries.com/v3.1/name/' + query)
+        await fetch(`https://restcountries.com/v3.1/name/${query}`)
           .then((data) => data.json())
           .then((data) => {
             result = data[0];
