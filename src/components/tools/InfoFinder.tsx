@@ -161,6 +161,9 @@ export namespace InfoFinder {
           .then((data) => {
             result = data[0];
           })
+          .catch((e) => {
+            console.error(e);
+          })
         return result;
       }
     }
