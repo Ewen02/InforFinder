@@ -167,4 +167,69 @@ export namespace InfoFinder {
         return result;
       }
     }
+
+    export namespace Open_Weather {
+      const api_key = "c0e4d6aa9211d0efa4c7d74df7761dfc";
+
+      export interface WeatherData {
+        coord: {
+          lon: number,
+          lat: number
+        },
+        weather: [{
+          id: number,
+          main: string,
+          description: string,
+          icon: string
+        }],
+        base: string,
+        main: {
+          temp: number,
+          feels_like: number,
+          temp_min: number,
+          temp_max: number,
+          pressure: number,
+          humidity: number,
+          sea_level: number,
+          grnd_level: number
+        },
+        visibility: number,
+        wind: {
+          speed: number,
+          deg: number,
+          gust: number
+        },
+        rain: {
+          "1h": number
+        },
+        clouds: {
+          all: number
+        },
+        dt: number,
+        sys: {
+          type: number,
+          id: number,
+          country: string,
+          sunrise: number,
+          sunset: number
+        },
+        timezone: number,
+        id: number,
+        name: string,
+        cod: number
+      }
+
+      export async function GetWeather(query:string): Promise<WeatherData> {
+        let result!: WeatherData;
+
+        await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${api_key}`)
+          .then((response) => {
+            result = response.data;
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+        return result;
+      }
+    }
 }

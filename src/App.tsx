@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 import InforCountry from './pages/InfoCountry/InfoCountry';
 import InforMovies from './pages/InfoMovies/InfoMovies';
 import InforCountryRest from './pages/InfoCountryRest/InfoCountryRest';
+import InfoWeather from './pages/InfoWeather/InfoWeather';
 
 function App() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/movies" element={<InforMovies/>}/>
           <Route path="/country" element={<InforCountry/>}/>
           <Route path="/countryRest" element={<InforCountryRest/>}/>
+          <Route path='/weather' element={<InfoWeather/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>

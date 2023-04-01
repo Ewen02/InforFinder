@@ -5,6 +5,7 @@ export { default as BasicButton } from './Button/BasicButton';
 
 export { default as MovieCard } from './CardMovie/CardMovie'
 export { default as CountrieCard } from './CardCountrie/CardCountrie'
+export { default as WeatherCard } from './CardWeather/WeatherCard'
 
 // Header
 
