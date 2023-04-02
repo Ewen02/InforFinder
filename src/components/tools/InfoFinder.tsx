@@ -232,4 +232,29 @@ export namespace InfoFinder {
         return result;
       }
     }
+
+    export namespace Spotify {
+      const clientID = "";
+      const clientSecret = "";
+
+      export interface SpotifyData {}
+
+      export async function GetMusic(query:string): Promise<SpotifyData> {
+        let result!:SpotifyData;
+
+        // await axios.post("https://accounts.spotify.com/api/token", {
+        //   headers: {
+        //     'Content-Type': 'application/x-www-form-urlencoded'
+        //   },
+        //   body: `grant_type=client_credentiels&client_id=${clientID}&client_secrets${clientSecret}`
+        // })
+        // .then((data) => {
+        //   console.log(data);
+        // }).catch((e) => {
+        //   console.error(e);
+        // });
+
+        return result;
+      }
+    }
 }

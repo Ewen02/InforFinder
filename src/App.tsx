@@ -8,6 +8,7 @@ import InforCountry from './pages/InfoCountry/InfoCountry';
 import InforMovies from './pages/InfoMovies/InfoMovies';
 import InforCountryRest from './pages/InfoCountryRest/InfoCountryRest';
 import InfoWeather from './pages/InfoWeather/InfoWeather';
+import MusicInfo from './pages/InfoMusic/InfoMusic';
 
 function App() {
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/country" element={<InforCountry/>}/>
           <Route path="/countryRest" element={<InforCountryRest/>}/>
           <Route path='/weather' element={<InfoWeather/>}/>
+          <Route path='/music' element={<MusicInfo/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>

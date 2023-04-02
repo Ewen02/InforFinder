@@ -3,40 +3,27 @@ import { BasicButton } from "../../components/indexComponents";
 import "./Home.scss"
 
 const Home = () => {
-
-    const goToMovies = () => {
-        window.location.href = "/movies";
-    }
-
-    const goToCountry = () => {
-        window.location.href = "/country";
-    }
-
-    const goToCountryRest = () => {
-        window.location.href = "/countryRest";
-    }
-
-    const goToWeather = () => {
-        window.location.href = "/weather";
-    }
-
     return (
         <>
             <BasicButton 
                 text="Movies"
-                onClick={goToMovies}
+                onClick={() => window.location.href = "/movies"}
             />
             <BasicButton    
                 text="Country"
-                onClick={goToCountry}
+                onClick={() => window.location.href = "/country"}
             />
             <BasicButton
                 text="Country - Rest API"
-                onClick={goToCountryRest}
+                onClick={() => window.location.href = "/countryRest"}
             />
             <BasicButton
                 text="Weather"
-                onClick={goToWeather}
+                onClick={() => window.location.href = "/weather"}
+            />
+            <BasicButton
+                text="Music"
+                onClick={() => window.location.href = "/music"}
             />
         </>
     )
